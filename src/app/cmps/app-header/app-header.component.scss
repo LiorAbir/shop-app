@@ -1,16 +1,25 @@
 .app-header {
-  justify-content: space-between;
-  //   align-items: baseline;
-  padding-top: 10px;
-  border-bottom: 1px solid black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-  .logo {
-    font-weight: 800;
-    font-size: 100px;
-    line-height: 90px;
-  }
+  .header-container {
+    justify-content: space-between;
+    align-self: flex-start;
 
-  .btn {
-    font-size: 20px;
+    padding: 10px 15px 0 15px;
+    background-color: white;
+    border-bottom: 1px solid black;
+
+    .logo {
+      font-weight: 800;
+      font-size: 100px;
+      line-height: 90px;
+    }
+
+    .btn {
+      font-size: 20px;
+    }
   }
 }
