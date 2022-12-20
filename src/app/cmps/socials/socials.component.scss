@@ -1,0 +1,24 @@
+@import "../../../assets/styles/styles";
+
+.social-container {
+  justify-content: center;
+  align-items: center;
+
+  .social {
+    width: 40px;
+    height: 40px;
+    margin: rem(5px);
+
+    &.youtube {
+      width: 55px;
+    }
+
+    img {
+      &:hover {
+        transition: $trans;
+        cursor: pointer;
+        filter: $svg-main-clr;
+      }
+    }
+  }
+}

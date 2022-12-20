@@ -1,15 +1,10 @@
 .main-app {
   flex-direction: column;
-  .app-header {
-    background-color: lightblue;
-  }
+  padding: 0 15px;
 
   .app-container {
     background-color: lightcyan;
     flex-grow: 1;
-  }
-
-  .app-footer {
-    background-color: lightskyblue;
+    min-height: 85vh;
   }
 }

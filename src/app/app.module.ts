@@ -9,6 +9,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductPreviewComponent } from './cmps/product-preview/product-preview.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
+import { SocialsComponent } from './cmps/socials/socials.component';
+import { ProductFilterComponent } from './cmps/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
     ProductPreviewComponent,
     AppHeaderComponent,
     AppFooterComponent,
+    SocialsComponent,
+    ProductFilterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
