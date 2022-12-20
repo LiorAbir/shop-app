@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product-service/product.service';
 
@@ -10,12 +11,12 @@ import { ProductService } from 'src/app/services/product-service/product.service
 export class ProductAppComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
-  products!: Product[];
+  // products!: Product[];
+  products$!: Observable<Product[]>;
+  subscription!: Subscription;
 
   ngOnInit(): void {
     this.productService.query();
-    this.productService.products$.subscribe((products) => {
-      this.products = products;
-    });
+    this.products$ = this.productService.products$;
   }
 }

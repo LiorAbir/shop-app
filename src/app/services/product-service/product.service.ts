@@ -23,6 +23,96 @@ const PRODUCTS = [
     salePrice: 0,
     labels: { Woman: 'Tops' },
   },
+  {
+    _id: 'P102',
+    name: 'Top',
+    price: 40.0,
+    desc: 'top shirt',
+    colors: [
+      {
+        browm: [
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
+        ],
+      },
+    ],
+    sizes: ['1', '2', '3', '4'],
+    isInSale: false,
+    salePrice: 0,
+    labels: { Woman: 'Tops' },
+  },
+  {
+    _id: 'P103',
+    name: 'Top',
+    price: 40.0,
+    desc: 'top shirt',
+    colors: [
+      {
+        browm: [
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
+        ],
+      },
+    ],
+    sizes: ['1', '2', '3', '4'],
+    isInSale: false,
+    salePrice: 0,
+    labels: { Woman: 'Tops' },
+  },
+  {
+    _id: 'P104',
+    name: 'Top',
+    price: 40.0,
+    desc: 'top shirt',
+    colors: [
+      {
+        browm: [
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
+        ],
+      },
+    ],
+    sizes: ['1', '2', '3', '4'],
+    isInSale: false,
+    salePrice: 0,
+    labels: { Woman: 'Tops' },
+  },
+  {
+    _id: 'P105',
+    name: 'Top',
+    price: 40.0,
+    desc: 'top shirt',
+    colors: [
+      {
+        browm: [
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
+        ],
+      },
+    ],
+    sizes: ['1', '2', '3', '4'],
+    isInSale: false,
+    salePrice: 0,
+    labels: { Woman: 'Tops' },
+  },
+  {
+    _id: 'P106',
+    name: 'Top',
+    price: 40.0,
+    desc: 'top shirt',
+    colors: [
+      {
+        browm: [
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
+        ],
+      },
+    ],
+    sizes: ['1', '2', '3', '4'],
+    isInSale: false,
+    salePrice: 0,
+    labels: { Woman: 'Tops' },
+  },
 ];
 
 @Injectable({

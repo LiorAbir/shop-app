@@ -1,0 +1,41 @@
+@import "../../../assets/styles/styles";
+
+.product-preview {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .img {
+    height: 70%;
+    margin-bottom: 15px;
+
+    img {
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > * {
+      margin-bottom: 5px;
+    }
+
+    .name:hover {
+      color: $main-clr;
+      cursor: pointer;
+      transition: $trans;
+    }
+
+    .price {
+      font-weight: 700;
+    }
+
+    p {
+      color: rgb(143, 143, 143);
+    }
+  }
+}
