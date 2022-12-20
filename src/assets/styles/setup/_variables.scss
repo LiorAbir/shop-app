@@ -1,0 +1,28 @@
+//COLORS
+$clr1: black;
+$clr2: white;
+$main-clr: #59c8e2;
+// $clr3: rgb(105 207 149);
+// $clr4: rgb(100 218 238);
+// $clr5: rgb(255 206 0);
+// $clr6: rgb(62 141 255);
+// $clr7: rgb(234 117 212);
+
+$background1: rgb(255 255 255 / 25%);
+
+$svg-main-clr: invert(91%) sepia(12%) saturate(7495%) hue-rotate(159deg)
+  brightness(95%) contrast(86%);
+
+// $border: 2px solid $clr1;
+// $radius: 8px;
+$trans: 0.2s;
+
+//LAYOUT
+$mini-breakpoint: 520px;
+$mobile-breakpoint: 760px;
+$narrow-breakpoint: 1100px;
+$normal-breakpoint: 1250px;
+$wide-breakpoint: 1460px;
+
+// - Mobile: 375px
+// - Desktop: 1440px

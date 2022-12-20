@@ -1,0 +1,15 @@
+.main-app {
+  flex-direction: column;
+  .app-header {
+    background-color: lightblue;
+  }
+
+  .app-container {
+    background-color: lightcyan;
+    flex-grow: 1;
+  }
+
+  .app-footer {
+    background-color: lightskyblue;
+  }
+}

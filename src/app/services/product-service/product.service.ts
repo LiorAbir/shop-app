@@ -1,37 +1,37 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
 
 //MODELS
-import { Product } from '../models/product.model';
+import { Product } from '../../models/product.model';
+
+const PRODUCTS = [
+  {
+    _id: 'P101',
+    name: 'Top',
+    price: 40.0,
+    desc: 'top shirt',
+    colors: [
+      {
+        browm: [
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
+          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
+        ],
+      },
+    ],
+    sizes: ['1', '2', '3', '4'],
+    isInSale: false,
+    salePrice: 0,
+    labels: { Woman: 'Tops' },
+  },
+];
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  private _productsDb: Product[] = [
-    {
-      _id: 'P101',
-      name: 'Top',
-      price: 40.0,
-      desc: 'top shirt',
-      colors: [
-        {
-          browm: [
-            'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
-            'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
-          ],
-        },
-      ],
-      sizes: ['1', '2', '3', '4'],
-      isInSale: false,
-      salePrice: 0,
-      labels: { Woman: 'Tops' },
-    },
-  ];
+  private _productsDb: Product[] = PRODUCTS;
 
   private _products$ = new BehaviorSubject<Product[]>([]);
   public products$ = this._products$.asObservable();
