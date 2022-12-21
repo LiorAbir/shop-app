@@ -7,5 +7,5 @@ export interface Product {
   sizes: string[];
   isInSale: boolean;
   salePrice: number;
-  labels: object;
+  category: {};
 }

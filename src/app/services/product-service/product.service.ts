@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 
 //MODELS
 import { Product } from '../../models/product.model';
+import { ProductFilter } from 'src/app/models/product-filter.model';
 
 const PRODUCTS = [
   {
@@ -21,7 +22,7 @@ const PRODUCTS = [
     sizes: ['1', '2', '3', '4'],
     isInSale: false,
     salePrice: 0,
-    labels: { Woman: 'Tops' },
+    category: { woman: 'tops' },
   },
   {
     _id: 'P102',
@@ -39,7 +40,7 @@ const PRODUCTS = [
     sizes: ['1', '2', '3', '4'],
     isInSale: false,
     salePrice: 0,
-    labels: { Woman: 'Tops' },
+    category: { woman: 'tops' },
   },
   {
     _id: 'P103',
@@ -57,7 +58,7 @@ const PRODUCTS = [
     sizes: ['1', '2', '3', '4'],
     isInSale: false,
     salePrice: 0,
-    labels: { Woman: 'Tops' },
+    category: { woman: 'tops' },
   },
   {
     _id: 'P104',
@@ -75,7 +76,7 @@ const PRODUCTS = [
     sizes: ['1', '2', '3', '4'],
     isInSale: false,
     salePrice: 0,
-    labels: { Woman: 'Tops' },
+    category: { woman: 'tops' },
   },
   {
     _id: 'P105',
@@ -93,7 +94,7 @@ const PRODUCTS = [
     sizes: ['1', '2', '3', '4'],
     isInSale: false,
     salePrice: 0,
-    labels: { Woman: 'Tops' },
+    category: { woman: 'tops' },
   },
   {
     _id: 'P106',
@@ -111,7 +112,7 @@ const PRODUCTS = [
     sizes: ['1', '2', '3', '4'],
     isInSale: false,
     salePrice: 0,
-    labels: { Woman: 'Tops' },
+    category: { woman: 'tops' },
   },
 ];
 
@@ -123,14 +124,54 @@ export class ProductService {
 
   private _productsDb: Product[] = PRODUCTS;
 
+  //products
   private _products$ = new BehaviorSubject<Product[]>([]);
   public products$ = this._products$.asObservable();
 
+  //filter
+  private _filterBy$ = new BehaviorSubject<ProductFilter>({
+    term: '',
+    mainCategory: '',
+    subcategory: 'tops',
+  });
+  public filterBy$ = this._filterBy$.asObservable();
+
   public query() {
-    const filterBy = { term: '' };
-    const products = this._productsDb.filter((product) => {
+    const filterBy = this._filterBy$.getValue();
+
+    //search
+    let products = this._productsDb.filter((product) => {
       return product.name.toLowerCase().includes(filterBy.term.toLowerCase());
     });
+
+    //main categoty
+    // products = this._productsDb.filter((product) => {
+    //   return Object.keys(product.category).includes(filterBy.mainCategory);
+    // });
+    products.map((product) => {
+      const ans = Object.keys(product.category).includes(filterBy.mainCategory);
+      // console.log(filterBy.mainCategory);
+
+      // console.log(product, ans);
+    });
+
+    //subcategory
+    // products = this._productsDb.filter((product) => {
+    //   return product.category[filterBy.mainCategory] === filterBy.subcategory;
+    // });
+    products.map((product) => {
+      const { mainCategory } = filterBy;
+      // console.log(filterBy.subcategory);
+
+      const ans =
+        (product.category as any)[mainCategory] === filterBy.subcategory;
+      // console.log(ans, product.category[filterBy.mainCategory]);
+
+      // console.log(filterBy.mainCategory);
+
+      // console.log(product, ans);
+    });
+
     this._products$.next(products);
   }
 
