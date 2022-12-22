@@ -13,10 +13,7 @@ const PRODUCTS = [
     desc: 'top shirt',
     colors: [
       {
-        browm: [
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
-        ],
+        browm: [],
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -31,10 +28,7 @@ const PRODUCTS = [
     desc: 'top shirt',
     colors: [
       {
-        browm: [
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
-        ],
+        browm: [],
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -49,10 +43,7 @@ const PRODUCTS = [
     desc: 'top shirt',
     colors: [
       {
-        browm: [
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
-        ],
+        browm: [],
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -67,10 +58,7 @@ const PRODUCTS = [
     desc: 'top shirt',
     colors: [
       {
-        browm: [
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
-        ],
+        browm: [],
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -85,10 +73,7 @@ const PRODUCTS = [
     desc: 'top shirt',
     colors: [
       {
-        browm: [
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
-        ],
+        browm: [],
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -103,10 +88,7 @@ const PRODUCTS = [
     desc: 'top shirt',
     colors: [
       {
-        browm: [
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_1.jpg',
-          'https://tamnoon.com/wp-content/uploads/2022/10/11217071_2.jpg',
-        ],
+        browm: [],
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -210,7 +192,10 @@ export class ProductService {
     return product._id ? this._edit(product) : this._add(product);
   }
 
-  public setFilterBy() {}
+  public setFilterBy(filterBy: ProductFilter) {
+    this._filterBy$.next(filterBy);
+    this.query();
+  }
 
   private _add(product: Product) {
     product._id = this._makeId();

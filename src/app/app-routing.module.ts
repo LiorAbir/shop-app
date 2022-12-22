@@ -12,7 +12,11 @@ const routes: Routes = [
     component: ProductDetailsComponent,
   },
   {
-    path: 'product',
+    path: 'product/:mainCategory/:subCategory',
+    component: ProductAppComponent,
+  },
+  {
+    path: 'product/:mainCategory',
     component: ProductAppComponent,
   },
   {
