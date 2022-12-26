@@ -16,40 +16,40 @@ export class ProductFilterComponent implements OnInit, OnDestroy {
 
   categories = {
     woman: [
-      'Woman',
+      'woman',
       'dresses',
-      'Skirts',
-      'Tops',
-      'Jackets and coats',
-      'Pants',
-      'Pajamas',
+      'skirts',
+      'tops',
+      'jackets and coats',
+      'pants',
+      'pajamas',
     ],
-    man: ['Man', 'Pants', 'Jackets and coats', 'Shirts', 'Pajamas'],
+    man: ['man', 'pants', 'jackets and coats', 'shirts', 'pajamas'],
     girls: [
-      'Girls',
-      'Dresses',
-      'Skirts',
-      'Tops',
-      'Jackets and coats',
-      'Pants',
-      'Pajamas',
+      'girls',
+      'dresses',
+      'skirts',
+      'tops',
+      'jackets and coats',
+      'pants',
+      'pajamas',
     ],
-    boys: ['Boys', 'Pants', 'Jackets and coats', 'Shirts', 'Pajamas'],
-    accessories: ['Accessories', 'Shoes', 'Bags', 'Hats'],
-    sale: ['Sale'],
+    boys: ['boys', 'pants', 'jackets and coats', 'shirts', 'pajamas'],
+    accessories: ['accessories', 'shoes', 'bags', 'hats'],
+    sale: ['sale'],
   };
 
   ngOnInit(): void {
-    this.subscription = this.productService.filterBy$.subscribe((filterBy) => {
-      this.filterBy = filterBy;
-    });
+    // this.subscription = this.productService.filterBy$.subscribe((filterBy) => {
+    //   this.filterBy = filterBy;
+    // });
   }
 
   onChangeFilter() {
-    this.productService.setFilterBy(this.filterBy);
+    // this.productService.setFilterBy(this.filterBy);
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 }
