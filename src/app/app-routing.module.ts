@@ -3,20 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductAppComponent } from './pages/product-app/product-app.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ProductResolver } from './services/resolvers/product.resolver';
 
 //CMPS
 
 const routes: Routes = [
   {
-    path: 'pruduct/:id',
+    path: 'product/:id',
     component: ProductDetailsComponent,
+    resolve: { product: ProductResolver },
   },
   {
-    path: 'product/:mainCategory/:subCategory',
+    path: 'product-category/:mainCategory/:subCategory',
     component: ProductAppComponent,
   },
   {
-    path: 'product/:mainCategory',
+    path: 'product-category/:mainCategory',
     component: ProductAppComponent,
   },
   {

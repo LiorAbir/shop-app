@@ -1,11 +1,11 @@
 <section class="product-preview flex">
     <!-- {{product | json}} -->
-    <div class="img">
+    <a routerLink="/product/{{product._id}}" class="img">
         <img [src]="product.img" alt="">
-    </div>
+    </a>
     <div class="info flex">
-        <a class="name">{{product.name}}</a>
-        <p>8576738</p>
+        <a routerLink="/product/{{product._id}}" class="name">{{product.name}}</a>
+        <p>{{product._id}}</p>
         <a class="price">{{product.price}}$</a>
     </div>
 

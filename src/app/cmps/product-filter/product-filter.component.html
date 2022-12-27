@@ -1,12 +1,12 @@
 <section class="product-filter flex">
     <nav class="category-container" *ngFor="let category of categories | keyvalue">
-        <a routerLink="/product/{{category.key}}" routerLinkActive="active">{{category.value[0]}}</a>
+        <a routerLink="/product-category/{{category.key}}" routerLinkActive="active">{{category.value[0]}}</a>
 
         <!-- MODAL -->
         <div class="category-modal flex">
             <div class="subcategory">
                 <div *ngFor="let subCategory of category.value">
-                    <a routerLink="/product/{{category.key}}/{{subCategory}}">{{subCategory}}</a>
+                    <a routerLink="/product-category/{{category.key}}/{{subCategory}}">{{subCategory}}</a>
                 </div>
             </div>
             <img src="https://tamnoon.com/wp-content/uploads/2019/09/GIRLS-4.png" alt="">
