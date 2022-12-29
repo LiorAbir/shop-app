@@ -1,0 +1,89 @@
+<section class="product-edit">
+    <h2>{{product._id? 'Edit':'Add'}} Product</h2>
+    {{product | json}}
+    <form (ngSubmit)="onSaveProduct()">
+
+        <label>
+            <h2>Name</h2>
+            <input [(ngModel)]="product.name" type="text" name="name" placeholder="Product name">
+        </label>
+
+        <label>
+            <h2>Price</h2>
+            <input [(ngModel)]="product.price" type="number" name="price" placeholder="Product price">
+        </label>
+
+        <label>
+            <h2>Description</h2>
+            <input [(ngModel)]="product.desc" type="text" name="desc" placeholder="Product description">
+        </label>
+
+        <!-- TODO -->
+        <label>
+            <h2>Colors</h2>
+            <div *ngFor="let color of product.colors">
+                <!-- <div *ngFor="let val of clr | keyvalue">
+                    {{val.value}}
+                </div> -->
+                <!-- {{color | json}} -->
+                <!-- {{color.value | json}} -->
+                <!-- <input [(ngModel)]="clr.clrName" type="text" name="color" placeholder="Color name"> -->
+                <!-- <input [(ngModel)]="clr.clr" type="color" name="color" placeholder="Color value"> -->
+                <!-- <img src="" alt="img"> -->
+                <!-- <input [(ngModel)]="clr.clrName.value" type="text" placeholder="Color name"
+                    (ngModelChange)="handleColorName($event)"> -->
+            </div>
+        </label>
+
+        <label>
+            <h2>Images</h2>
+        </label>
+        <!--  -->
+
+        <label>
+            <h2>Sizes</h2>
+            <input type="text" placeholder="hh">
+        </label>
+
+        <div class="category-info">
+            <label>
+                <h2>Main category</h2>
+                <select multiple>
+                    <option value="">Main category</option>
+                    <option value="" *ngFor="let category of categories | keyvalue">{{category.key}}</option>
+                </select>
+            </label>
+            <!-- <label *ngFor="let category of product.category | keyvalue">
+                {{category.key}}
+                <h2>sub category</h2>
+                <select>
+                    <option value="">Sub category</option> -->
+            <!-- <option value="" *ngFor="let subCategory of categories.category.key | keyvalue">Sub category -->
+            <!-- </option> -->
+            <!-- </select>
+            </label> -->
+        </div>
+
+        <div class="sale-info">
+            {{product.saleInfo | json}}
+            <label>
+                <h2>In sale ?</h2>
+                <input type="checkbox" [(ngModel)]="product.saleInfo.isInSale">
+            </label>
+            <label>
+                <h2>Sale price: </h2>
+                <input type="number" [(ngModel)]="product.saleInfo.salePrice">
+            </label>
+            <label>
+                <h2>Sale type :</h2>
+                <select>
+                    <option value="">Sale type</option>
+                    <option value="">types</option>
+                </select>
+            </label>
+        </div>
+
+
+
+    </form>
+</section>

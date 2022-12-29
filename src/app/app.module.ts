@@ -12,6 +12,8 @@ import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
 import { SocialsComponent } from './cmps/socials/socials.component';
 import { ProductFilterComponent } from './cmps/product-filter/product-filter.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,9 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     SocialsComponent,
     ProductFilterComponent,
     ProductDetailsComponent,
+    ProductEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

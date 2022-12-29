@@ -1,20 +1,24 @@
 <section class="product-details">
-    <div class="navigation">
+    <div class="navigation flex">
         <div>
-            <button>prev</button>
-            <button>list</button>
-            <button>next</button>
+            <a>home</a> / <a>boys</a> / <a>pants</a> / <a>{{product.name}}</a>
         </div>
         <div>
-            <p>home / woman / skirts / peoduct name </p>
+            <a>prev </a>
+            <a>list </a>
+            <a>next </a>
         </div>
     </div>
-    <div class="product">
-        <img [src]="product.img" alt="">
+    <div class="product flex">
         <div class="info">
             <h1>{{product.name}}</h1>
-            <h2>{{product.price}}</h2>
-            <h3>{{product._id}}</h3>
+            <h1>{{product.price}}$</h1>
+            <div class="id">{{product._id}}</div>
+            <form>
+                <div class="colors">colors: </div>
+                <div class="sizes">sizes: {{product.sizes}}</div>
+            </form>
         </div>
+        <img [src]="product.img" alt="">
     </div>
 </section>

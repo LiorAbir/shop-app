@@ -5,8 +5,11 @@ export interface Product {
   img: string;
   desc: string;
   colors: object[];
-  sizes: string[];
-  isInSale: boolean;
-  salePrice: number;
+  sizes: (string | number)[];
+  saleInfo: {
+    isInSale: boolean;
+    salePrice: number;
+    saleType: string;
+  };
   category: object;
 }

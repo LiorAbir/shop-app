@@ -17,9 +17,12 @@ const PRODUCTS = [
         browm: [],
       },
     ],
-    sizes: ['1', '2', '3', '4'],
-    isInSale: false,
-    salePrice: 0,
+    sizes: [1, 2, 3, 4],
+    saleInfo: {
+      isInSale: false,
+      salePrice: 0,
+      saleType: '',
+    },
     category: { woman: ['dresses'] },
   },
   {
@@ -34,8 +37,11 @@ const PRODUCTS = [
       },
     ],
     sizes: ['1', '2', '3', '4'],
-    isInSale: false,
-    salePrice: 0,
+    saleInfo: {
+      isInSale: false,
+      salePrice: 0,
+      saleType: '',
+    },
     category: { woman: ['jackets and coats'] },
   },
   {
@@ -50,8 +56,11 @@ const PRODUCTS = [
       },
     ],
     sizes: ['1', '2', '3', '4'],
-    isInSale: false,
-    salePrice: 0,
+    saleInfo: {
+      isInSale: false,
+      salePrice: 0,
+      saleType: '',
+    },
     category: { man: ['jackets and coats'] },
   },
   {
@@ -66,8 +75,11 @@ const PRODUCTS = [
       },
     ],
     sizes: ['1', '2', '3', '4'],
-    isInSale: false,
-    salePrice: 0,
+    saleInfo: {
+      isInSale: false,
+      salePrice: 0,
+      saleType: '',
+    },
     category: { girls: ['tops'] },
   },
   {
@@ -82,8 +94,11 @@ const PRODUCTS = [
       },
     ],
     sizes: ['1', '2', '3', '4'],
-    isInSale: false,
-    salePrice: 0,
+    saleInfo: {
+      isInSale: false,
+      salePrice: 0,
+      saleType: '',
+    },
     category: { accessories: ['shoes'] },
   },
   {
@@ -98,8 +113,11 @@ const PRODUCTS = [
       },
     ],
     sizes: ['1', '2', '3', '4'],
-    isInSale: false,
-    salePrice: 0,
+    saleInfo: {
+      isInSale: false,
+      salePrice: 0,
+      saleType: '',
+    },
     category: { boys: ['pants'] },
   },
 ];
@@ -120,7 +138,7 @@ export class ProductService {
   private _filterBy$ = new BehaviorSubject<ProductFilter>({
     term: '',
     mainCategory: '',
-    subCategory: 'tops',
+    subCategory: '',
   });
   public filterBy$ = this._filterBy$.asObservable();
 
@@ -143,37 +161,8 @@ export class ProductService {
         return (product.category as any)[filterBy.mainCategory].includes(
           filterBy.subCategory
         );
-        // Object.keys(product.category).includes(filterBy.mainCategory)
-        // console.log(product.category[filterBy.mainCategory]);
-
-        // console.log((product.category as any)[filterBy.mainCategory]);
-        return (product.category as any)[filterBy.mainCategory].filter(
-          (subC: string) => {
-            return subC === filterBy.subCategory;
-          }
-        );
-        console.log(product);
       });
     }
-
-    // products.map((product) => {
-    //   const { mainCategory, subCategory } = filterBy;
-    //   // console.log(product.category[woman]);
-
-    //   // console.log(mainCategory, subCategory);
-    //   // console.log(filterBy);
-
-    //   // // console.log(filterBy.subcategory);
-
-    //   // // const ans =
-    //   // //  === filterBy.subCategory;
-    //   // // console.log(ans, product.category[filterBy.mainCategory]);
-    //   // console.log((product.category as any)[mainCategory]);
-
-    //   // console.log(filterBy.mainCategory);
-
-    //   // console.log(product, ans);
-    // });
 
     this._products$.next(products);
   }
@@ -182,12 +171,22 @@ export class ProductService {
     return {
       name: '',
       price: 0,
+      img: '',
       desc: '',
-      colors: [{}],
-      sizes: [],
-      isInSale: false,
-      salePrice: 0,
-      labels: {},
+      colors: [
+        {
+          clrName: '',
+          imgs: [],
+          clr: '',
+        },
+      ],
+      sizes: [''],
+      saleInfo: {
+        isInSale: false,
+        salePrice: 0,
+        saleType: '',
+      },
+      category: {},
     };
   }
 

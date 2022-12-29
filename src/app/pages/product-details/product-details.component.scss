@@ -1,0 +1,45 @@
+.product-details {
+  min-height: 85vh;
+  .navigation {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .product {
+    // justify-content: center;
+    // align-items: center;
+
+    .info {
+      width: 50%;
+      margin-right: 1rem;
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .id {
+        color: rgb(131 131 131);
+        padding-bottom: 0.3rem;
+      }
+
+      form {
+        font-size: 18px;
+        padding: 15px 10px;
+
+        .colors {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .id,
+      form {
+        border-bottom: 1px solid black;
+      }
+    }
+
+    img {
+      width: 60%;
+    }
+  }
+}
