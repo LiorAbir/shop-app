@@ -14,7 +14,9 @@ const PRODUCTS = [
     img: 'https://images.unsplash.com/photo-1639926784543-d6777b39dceb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=570&q=80',
     colors: [
       {
-        browm: [],
+        clrName: 'Black',
+        imgs: [''],
+        clr: '#000000',
       },
     ],
     sizes: [1, 2, 3, 4],
@@ -33,7 +35,9 @@ const PRODUCTS = [
     img: 'https://images.unsplash.com/photo-1639926783705-34fedf78685d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=522&q=80',
     colors: [
       {
-        browm: [],
+        clrName: 'Black',
+        imgs: [''],
+        clr: '#000000',
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -52,7 +56,9 @@ const PRODUCTS = [
     img: 'https://images.unsplash.com/photo-1641299549081-816e7388acbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&q=80',
     colors: [
       {
-        browm: [],
+        clrName: 'Black',
+        imgs: [''],
+        clr: '#000000',
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -71,7 +77,9 @@ const PRODUCTS = [
     img: 'https://images.unsplash.com/photo-1619784299133-f691ffaea42f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
     colors: [
       {
-        browm: [],
+        clrName: 'Black',
+        imgs: [''],
+        clr: '#000000',
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -90,7 +98,9 @@ const PRODUCTS = [
     img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     colors: [
       {
-        browm: [],
+        clrName: 'Black',
+        imgs: [''],
+        clr: '#000000',
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -109,7 +119,9 @@ const PRODUCTS = [
     desc: 'top shirt',
     colors: [
       {
-        browm: [],
+        clrName: 'Black',
+        imgs: [''],
+        clr: '#000000',
       },
     ],
     sizes: ['1', '2', '3', '4'],
@@ -176,7 +188,7 @@ export class ProductService {
       colors: [
         {
           clrName: '',
-          imgs: [],
+          imgs: [''],
           clr: '',
         },
       ],

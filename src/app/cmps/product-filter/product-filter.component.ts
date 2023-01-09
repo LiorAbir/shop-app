@@ -16,7 +16,6 @@ export class ProductFilterComponent implements OnInit, OnDestroy {
 
   categories = {
     woman: [
-      'woman',
       'dresses',
       'skirts',
       'tops',
@@ -24,9 +23,8 @@ export class ProductFilterComponent implements OnInit, OnDestroy {
       'pants',
       'pajamas',
     ],
-    man: ['man', 'pants', 'jackets and coats', 'shirts', 'pajamas'],
+    man: ['pants', 'jackets and coats', 'shirts', 'pajamas'],
     girls: [
-      'girls',
       'dresses',
       'skirts',
       'tops',
@@ -34,9 +32,9 @@ export class ProductFilterComponent implements OnInit, OnDestroy {
       'pants',
       'pajamas',
     ],
-    boys: ['boys', 'pants', 'jackets and coats', 'shirts', 'pajamas'],
-    accessories: ['accessories', 'shoes', 'bags', 'hats'],
-    sale: ['sale'],
+    boys: ['pants', 'jackets and coats', 'shirts', 'pajamas'],
+    accessories: ['shoes', 'bags', 'hats'],
+    sale: [],
   };
 
   ngOnInit(): void {

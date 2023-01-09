@@ -23,7 +23,32 @@
 
       input {
         flex-grow: 1;
+        background-color: lightblue;
+      }
+    }
+
+    .clr-form {
+      .clrs-form-container {
+        flex-direction: column;
+        // justify-content: space-between;
+        // align-items: center;
+
+        .add-color,
+        .color-info {
+          display: flex;
+          // flex-direction: column;
+
+          padding: 1rem;
+          border: 1px solid black;
+          margin: 1rem;
+          // flex-direction: column;
+        }
       }
     }
   }
+}
+
+.obj {
+  width: 80%;
+  background-color: lightcoral;
 }

@@ -1,6 +1,10 @@
 <section class="product-edit flex">
     <h2>{{product._id? 'Edit':'Add'}} Product</h2>
-    {{product | json}}
+    <pre class="obj">
+        {{product | json}}
+        ....
+        {{emptyClr | json}}
+    </pre>
     <form (ngSubmit)="onSaveProduct()" class="edit-form flex">
 
         <label>
@@ -18,32 +22,25 @@
             <input [(ngModel)]="product.desc" type="text" name="desc" placeholder="Product description">
         </label>
 
-        <!-- TODO -->
-        <label>
+        <!-- TODO IMG ADD-->
+        <div class="clr-form">
             <h2>Colors:</h2>
-            <div *ngFor="let color of product.colors">
-                <!-- <div *ngFor="let val of clr | keyvalue">
-                    {{val.value}}
-                </div> -->
-                <!-- {{color | json}} -->
-                <!-- {{color.value | json}} -->
-                <!-- <input [(ngModel)]="clr.clrName" type="text" name="color" placeholder="Color name"> -->
-                <!-- <input [(ngModel)]="clr.clr" type="color" name="color" placeholder="Color value"> -->
-                <!-- <img src="" alt="img"> -->
-                <!-- <input [(ngModel)]="clr.clrName.value" type="text" placeholder="Color name"
-                    (ngModelChange)="handleColorName($event)"> -->
+            <div class="clrs-form-container flex">
+                <form class="add-color">
+                    <input [(ngModel)]="emptyClr.clr" type="color" name="emptyClr">
+                    <input [(ngModel)]="emptyClr.clrName" type="text" name="emptyClrName" placeholder="Color name">
+                    <button>Add img</button>
+                    <button>+</button>
+                </form>
+                <form class="color-info" *ngFor="let color of product.colors">
+                    <input type="color" [(ngModel)]="color.clr" name="clr">
+                    <input [(ngModel)]="color.clrName" type="text" name="clrName" placeholder="Color name">
+                    <button>Add img</button>
+                    <button>-</button>
+                </form>
             </div>
-        </label>
+        </div>
 
-        <label>
-            <h2>Images:</h2>
-        </label>
-        <!--  -->
-
-        <label>
-            <h2>Sizes:</h2>
-            <input type="text" placeholder="hh">
-        </label>
 
         <div class="category-info">
             <label>
@@ -57,21 +54,25 @@
                 <h2>sub category:</h2>
                 <select *ngFor="let category of product.category | keyvalue">
                     <option value="">{{category.key}}</option>
-                    <!-- <option value="" *ngFor="let subCategory of categories[category.key] | keyvalue">Sub category -->
-                    <!-- </option> -->
+                    <!-- <option value="" *ngFor="let subCategory of categories.category | keyvalue">{{subCategory}}</option> -->
                 </select>
             </label>
         </div>
 
-        <div class="sale-info">
+        <label>
+            <h2>Sizes:</h2>
+            <input type="text" placeholder="hh">
+        </label>
+
+        <form class="sale-form">
             {{product.saleInfo | json}}
             <label>
                 <h2>In sale ?</h2>
-                <!-- <input type="checkbox" [(ngModel)]="product.saleInfo.isInSale"> -->
+                <input type="checkbox" [(ngModel)]="product.saleInfo.isInSale" name="sale">
             </label>
             <label>
                 <h2>Sale price: </h2>
-                <!-- <input type="number" [(ngModel)]="product.saleInfo.salePrice"> -->
+                <input type="number" [(ngModel)]="product.saleInfo.salePrice" name="salePrice">
             </label>
             <label>
                 <h2>Sale type :</h2>
@@ -80,7 +81,7 @@
                     <option value="">types</option>
                 </select>
             </label>
-        </div>
+        </form>
 
 
 

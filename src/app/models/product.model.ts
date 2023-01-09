@@ -4,7 +4,7 @@ export interface Product {
   price: number;
   img: string;
   desc: string;
-  colors: object[];
+  colors: { clrName: string; imgs: string[]; clr: string }[];
   sizes: (string | number)[];
   saleInfo: {
     isInSale: boolean;

@@ -2,70 +2,61 @@
 
 .product-filter {
   justify-content: center;
-  align-items: center;
-
-  border-bottom: 1px solid black;
-  background-color: white;
-  font-size: 22px;
+  box-shadow: -3px 1px 3px 0px rgb(0 0 0 / 32%);
+  font-size: 20px;
+  text-transform: capitalize;
 
   .category-container {
     cursor: pointer;
     position: relative;
     padding: 1rem 10px;
 
-    // .category-modal:hover {
-    //   background-color: aqua;
-    // }
+    &:hover {
+      .category-modal {
+        transform: scaleY(1);
+      }
+    }
+
+    a.active,
+    a:hover {
+      color: $main-clr;
+    }
 
     .category-modal {
-      &:hover {
-        transform: scaleY(1);
-        // pointer-events: all;
-        // opacity: 1;
-        // background-color: lightblue;
-      }
+      justify-content: space-between;
       position: absolute;
       top: 52px;
-      left: -390px;
-
-      transform: scaleY(0);
-
-      // opacity: 0;
-      // pointer-events: none;
-
-      width: 900px;
       height: 350px;
-      padding: 5px;
-      background-color: white;
+      left: -390px;
+      width: 900px;
+
       z-index: 100;
+      transform: scaleY(0);
+      background-color: white;
       transition: 0.3s;
       box-shadow: 0 0 1px 1px #80808059;
 
+      &:hover {
+        transform: scaleY(1);
+      }
+
       img {
         width: 50%;
+        object-fit: cover;
       }
 
       .subcategory {
         flex-direction: column;
+        padding: 10px;
 
-        &:first-child {
-          font-weight: 700;
+        a {
+          margin-bottom: 1rem;
         }
 
-        width: 50%;
-        padding-left: 2rem;
+        .main-category {
+          font-weight: 700;
+        }
       }
-    }
-
-    &:hover {
-      .category-modal {
-        transform: scaleY(1);
-        // opacity: 1;
-      }
-    }
-
-    a.active {
-      color: $main-clr;
     }
   }
 }

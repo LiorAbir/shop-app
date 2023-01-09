@@ -43,6 +43,12 @@ export class ProductEditComponent implements OnInit {
     sale: ['sale'],
   };
 
+  emptyClr = {
+    clrName: '',
+    imgs: [],
+    clr: '',
+  };
+
   ngOnInit(): void {
     this.route.data.subscribe(({ product }) => {
       this.product =
