@@ -1,17 +1,24 @@
+@import "../../../assets/styles/styles";
+
 .product-edit {
+  justify-content: space-between;
+
   min-height: 85vh;
-  flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  padding: 0 5rem;
 
   .edit-form {
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
     width: 50%;
 
-    label {
+    background-color: $background1;
+    box-shadow: 0 0 5px 0px #615d5d47;
+    box-shadow: 0 0 0 black;
+    padding: 1rem;
+    border-radius: 8px;
+
+    label:not(.size-label) {
       display: flex;
       border-bottom: 1px solid black;
       padding: 0.5rem;
@@ -46,6 +53,11 @@
       }
     }
   }
+}
+.sale-form {
+  box-shadow: 0 0 3px 0px red;
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 .obj {

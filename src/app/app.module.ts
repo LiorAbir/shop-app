@@ -14,6 +14,7 @@ import { ProductFilterComponent } from './cmps/product-filter/product-filter.com
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 import { FormsModule } from '@angular/forms';
+import { AddImgComponent } from './cmps/add-img/add-img.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     ProductFilterComponent,
     ProductDetailsComponent,
     ProductEditComponent,
+    AddImgComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

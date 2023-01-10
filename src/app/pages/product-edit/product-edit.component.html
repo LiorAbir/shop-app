@@ -1,5 +1,5 @@
 <section class="product-edit flex">
-    <h2>{{product._id? 'Edit':'Add'}} Product</h2>
+    <!-- <h2>{{product._id? 'Edit':'Add'}} Product</h2> -->
     <pre class="obj">
         {{product | json}}
         ....
@@ -22,6 +22,18 @@
             <input [(ngModel)]="product.desc" type="text" name="desc" placeholder="Product description">
         </label>
 
+        <!-- TODOOO -->
+        <div class="sizes-form">
+            <!-- <h2>Sizes:</h2>
+            <div *ngFor="let size of sizes">
+                <label class="size-label">
+                    <h2>{{size}}</h2>
+                    <input type="checkbox">
+                </label>
+            </div> -->
+        </div>
+
+
         <!-- TODO IMG ADD-->
         <div class="clr-form">
             <h2>Colors:</h2>
@@ -29,7 +41,7 @@
                 <form class="add-color">
                     <input [(ngModel)]="emptyClr.clr" type="color" name="emptyClr">
                     <input [(ngModel)]="emptyClr.clrName" type="text" name="emptyClrName" placeholder="Color name">
-                    <button>Add img</button>
+                    <add-img (onUploadImg)="onAddImg($event)"></add-img>
                     <button>+</button>
                 </form>
                 <form class="color-info" *ngFor="let color of product.colors">
@@ -59,31 +71,25 @@
             </label>
         </div>
 
-        <label>
-            <h2>Sizes:</h2>
-            <input type="text" placeholder="hh">
-        </label>
-
-        <form class="sale-form">
-            {{product.saleInfo | json}}
-            <label>
-                <h2>In sale ?</h2>
-                <input type="checkbox" [(ngModel)]="product.saleInfo.isInSale" name="sale">
-            </label>
-            <label>
-                <h2>Sale price: </h2>
-                <input type="number" [(ngModel)]="product.saleInfo.salePrice" name="salePrice">
-            </label>
-            <label>
-                <h2>Sale type :</h2>
-                <select>
-                    <option value="">Sale type</option>
-                    <option value="">types</option>
-                </select>
-            </label>
-        </form>
-
-
-
     </form>
+
+    <form class="sale-form">
+        <label>
+            <h2>In sale ?</h2>
+            <input type="checkbox" [(ngModel)]="product.saleInfo.isInSale" name="sale">
+        </label>
+        <label>
+            <h2>Sale price: </h2>
+            <input type="number" [(ngModel)]="product.saleInfo.salePrice" name="salePrice">
+        </label>
+        <label>
+            <h2>Sale type :</h2>
+            <select>
+                <option value="">Sale type</option>
+                <option value="">types</option>
+            </select>
+        </label>
+    </form>
+
+
 </section>

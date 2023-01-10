@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { Product } from 'src/app/models/product.model';
@@ -43,6 +43,26 @@ export class ProductEditComponent implements OnInit {
     sale: ['sale'],
   };
 
+  sizes = [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    'xs',
+    's',
+    'm',
+    'L',
+    'xl',
+    'xxl',
+    '3xl',
+  ];
+
   emptyClr = {
     clrName: '',
     imgs: [],
@@ -56,8 +76,14 @@ export class ProductEditComponent implements OnInit {
     });
   }
 
+  onAddImg(url: string) {
+    console.log(url, 'url');
+  }
+
   async onSaveProduct() {
-    console.log(this.product);
+    console.log('hhh');
+
+    // console.log(this.product);
 
     // await lastValueFrom(this.productService.save({ ...this.product }));
     // this.router.navigateByUrl('/');
